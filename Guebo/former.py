@@ -4,10 +4,8 @@ from datetime import datetime
 
 st.set_page_config(page_title='Formulario', page_icon=':bar_chart', layout='centered')
 
-
-url = "https://raw.githubusercontent.com/evan-esac-idej//former/main/Guebo/dados/dataset.xlsx"
-df = pd.read_excel(url)
-
+path = os.path.join('dados', 'dataset.xlsx')
+df = pd.read_excel(path)
 
 with st.expander('Clique aqui para ver os dados'):
     st.dataframe(df, hide_index=True)
@@ -29,6 +27,7 @@ with st.container():
     if st.button('Adicionar ao banco de dados'):
         st.session_state.keep.append(dic)
         st.dataframe(st.session_state.keep)
+
 
 
 
