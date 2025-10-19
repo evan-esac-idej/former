@@ -6,7 +6,7 @@ import os
 st.set_page_config(page_title='Formulario', page_icon=':bar_chart', layout='centered')
 
 path = os.path.join('dados', 'dataset.xlsx')
-if os.path.exists(path)
+if os.path.exists(path):
     df = pd.read_excel(path)
 
 with st.expander('Clique aqui para ver os dados'):
@@ -29,6 +29,7 @@ with st.container():
     if st.button('Adicionar ao banco de dados'):
         st.session_state.keep.append(dic)
         st.dataframe(st.session_state.keep)
+
 
 
 
